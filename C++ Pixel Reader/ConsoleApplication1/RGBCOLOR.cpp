@@ -1,5 +1,4 @@
 #include "RGBCOLOR.h"
-#include <iostream>
 
 RGBCOLOR::RGBCOLOR(double red, double green, double blue)
 {

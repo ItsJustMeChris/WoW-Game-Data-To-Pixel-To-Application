@@ -14,7 +14,7 @@ RGBCOLOR SpellList::getSpell(std::string spellName)
 	}
 }
 
-int SpellList::getSpellBinding(RGBCOLOR spellColor)
+std::vector<int> SpellList::getSpellBinding(RGBCOLOR spellColor)
 {
 	ptrdiff_t pos = std::distance(m_spells.begin(), std::find(m_spells.begin(), m_spells.end(), spellColor));
 	if (pos != m_spells.size())
@@ -23,11 +23,11 @@ int SpellList::getSpellBinding(RGBCOLOR spellColor)
 	}
 	else
 	{
-		return 0x16;
+		return {};
 	}
 }
 
-void SpellList::registerSpell(std::string spellName, RGBCOLOR spellColor, unsigned char keyBinding)
+void SpellList::registerSpell(std::string spellName, RGBCOLOR spellColor, std::initializer_list<int> keyBinding)
 {
 	m_spells.push_back(spellColor);
 	m_spellNames.push_back(spellName);
