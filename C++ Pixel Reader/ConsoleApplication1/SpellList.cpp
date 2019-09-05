@@ -33,3 +33,13 @@ void SpellList::registerSpell(std::string spellName, RGBCOLOR spellColor, std::i
 	m_spellNames.push_back(spellName);
 	m_keyBindings.push_back(keyBinding);
 }
+
+std::string SpellList::getSpellName(RGBCOLOR spellColor)
+{
+	ptrdiff_t pos = std::distance(m_spells.begin(), std::find(m_spells.begin(), m_spells.end(), spellColor));
+	if (pos != m_spells.size())
+	{
+		return m_spellNames[pos];
+	}
+	return "";
+}

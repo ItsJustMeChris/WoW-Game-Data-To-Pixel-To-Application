@@ -12,7 +12,6 @@ void InputFaker::sendKey(std::vector<int> keys)
 	
 	for (auto i : keys)
 	{
-		std::cout << i << " DOWN" << std::endl;
 		ip.ki.wVk = i;
 		ip.ki.dwFlags = 0; // 0 for key press
 		ip.type = INPUT_KEYBOARD;
@@ -25,7 +24,6 @@ void InputFaker::sendKey(std::vector<int> keys)
 	}
 	for (auto i : keys)
 	{
-		std::cout << i << " UP" << std::endl;
 		ip.type = INPUT_KEYBOARD;
 		ip.ki.wScan = 0;
 		ip.ki.time = 0;

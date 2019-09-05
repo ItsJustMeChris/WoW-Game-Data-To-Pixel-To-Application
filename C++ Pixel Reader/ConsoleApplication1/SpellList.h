@@ -2,6 +2,7 @@
 #include "RGBCOLOR.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 class SpellList
 {
@@ -13,5 +14,6 @@ public:
 	SpellList();
 	RGBCOLOR getSpell(std::string spellName);
 	std::vector<int> getSpellBinding(RGBCOLOR spellColor);
+	std::string getSpellName(RGBCOLOR spellColor);
 	void registerSpell(std::string spellName, RGBCOLOR spellColor, std::initializer_list<int> keyBinding);
 };
